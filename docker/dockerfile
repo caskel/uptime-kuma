@@ -16,10 +16,6 @@ ENTRYPOINT ["/usr/bin/dumb-init", "--", "extra/entrypoint.sh"]
 CMD ["node", "server/server.js"]
 
 
-FROM release AS nightly
-RUN npm run mark-as-nightly
-
-
 # Upload the artifact to Github
 FROM louislam/uptime-kuma:base-debian AS upload-artifact
 WORKDIR /
