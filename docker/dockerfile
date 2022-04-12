@@ -1,5 +1,5 @@
 FROM louislam/uptime-kuma:base-debian AS build
-
+WORKDIR /app
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
 
@@ -9,7 +9,7 @@ RUN npm ci --production && \
 
 
 FROM louislam/uptime-kuma:base-debian AS release
-
+WORKDIR /app
 
 # Copy app files from build layer
 COPY --from=build /app /app
