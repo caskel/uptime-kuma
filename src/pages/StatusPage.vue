@@ -238,9 +238,7 @@
                 <PublicGroupList :edit-mode="enableEditMode" :show-tags="config.showTags" />
             </div>
 
-            <footer class="mt-5 mb-4">
-                {{ $t("Powered by") }} <a target="_blank" href="https://github.com/louislam/uptime-kuma">{{ $t("Uptime Kuma" ) }}</a>
-            </footer>
+       
         </div>
 
         <Confirm ref="confirmDelete" btn-style="btn-danger" :yes-text="$t('Yes')" :no-text="$t('No')" @yes="deleteStatusPage">
